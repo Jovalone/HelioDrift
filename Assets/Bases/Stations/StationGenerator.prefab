@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8061846081537490361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8061846081537490363}
+  - component: {fileID: 8061846081537490360}
+  m_Layer: 0
+  m_Name: SpaceStation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8061846081537490363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061846081537490361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8061846081537490360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061846081537490361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47ca635a8f5c9b47a55a15735c527c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transform: {fileID: 8061846081537490363}
+  Tiles:
+  - {fileID: 6174123758404480959, guid: 13c76f45422b81d468e9b8b209146548, type: 3}
+  - {fileID: 7212787118427702222, guid: 4e2b28bf4e5615a45ac047c6e67c5c3d, type: 3}
+  - {fileID: 2231601168800563007, guid: e25a8b682456b0641af140f25f7813e0, type: 3}
+  - {fileID: 24425061807490839, guid: c998c8f9670bc1345a2862b092768d5b, type: 3}
+  Walls:
+  - {fileID: 8762951641228888295, guid: 20d9c67c29948ee4cafde80bfe7d4afd, type: 3}
+  - {fileID: 7138171094964318193, guid: dee08f0dd1a282b4b87fa61092e98852, type: 3}
+  - {fileID: 3685431474442514096, guid: 03cef7ff06d157b40b46cf6b8a09dc10, type: 3}
+  - {fileID: 6240903720836549873, guid: 5eac43ee6baa50f48865fea6c85d3a4f, type: 3}
+  - {fileID: 7035410305942450039, guid: a2b61713246f36048ab9e36e8f0d371f, type: 3}
+  - {fileID: 6995355166770184766, guid: 095de08457cc4f4498c13ef2df061651, type: 3}
+  - {fileID: 5613377630122838330, guid: be307d784d19ca44eb6e6e3c77fbd8b2, type: 3}
+  - {fileID: 643616773635913260, guid: d873503722155e641b3fe7350dfa6e7c, type: 3}
+  - {fileID: 8647618014201918551, guid: e37199756066fa34e9c069bb5c076da4, type: 3}
+  - {fileID: 7474435323917323536, guid: 021af218e96775b4299a09da29c59b49, type: 3}
+  - {fileID: 663703377401037981, guid: beb93c11a932a6442b5e89de21003d86, type: 3}
+  - {fileID: 8319226612573985031, guid: f24858106db39814c8a0576a878d91dc, type: 3}
+  - {fileID: 2436654956229816952, guid: b2da0af77669c8d429ef27a6b1441edc, type: 3}
+  - {fileID: 2301016625281363835, guid: 8e2151eb1ef5994498c9e008202311db, type: 3}
+  - {fileID: 5872593454433815347, guid: d5b7f48079f48764aa854b69979753bb, type: 3}
+  - {fileID: 8853548760457902106, guid: 6f572017706dd6c4096a22f2c3f45796, type: 3}
+  - {fileID: 1744971090080710707, guid: 2ae88407ff4912743a83b7e1a22f4bf3, type: 3}
+  - {fileID: 1098231703647091849, guid: 11286d80bafda6d4893d1a4b1f8cc0ef, type: 3}
+  - {fileID: 6430904040507557680, guid: 539ae469053994b41b5339da9edba43f, type: 3}
+  - {fileID: 457910793783753778, guid: 6c293764e27f2f54f99786988c07c852, type: 3}
+  - {fileID: 5405157484866971101, guid: c2e3284a1ded707478d1970b193d6380, type: 3}
+  - {fileID: 5434139785994452696, guid: 254e7c2ac05db4b4ab119638bca0e913, type: 3}
+  - {fileID: 2166796367798319764, guid: 96b4fd9345f59534a9dd3fe5078f657a, type: 3}
+  - {fileID: 8834746015755789336, guid: c0b2851d303f08b46ad0365285330cfe, type: 3}
+  - {fileID: 2603142560515966286, guid: 9590c8e59ce4789428118b9e5d6f4fdc, type: 3}
+  - {fileID: 2133084232535871680, guid: 7f90258fc03bead478f4e20ee15ef47e, type: 3}
+  stationSize: 3
+  roomSize: 7
+  DoubleRoomChance: 20
+  wallsLink: []

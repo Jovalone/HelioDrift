@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NewShaderVariants.2
+  m_Shaders:
+  - first: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: 65df88701913c224d95fc554db28381a, type: 3}
+    second:
+      variants:
+      - keywords: UNITY_HDR_ON
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: 85187c2149c549c5b33f0cdb02836b17, type: 3}
+    second:
+      variants:
+      - keywords: UNDERLAY_ON
+        passType: 8
+  - first: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: e35a31e1679aeff489e202f5cc4853d5, type: 3}
+    second:
+      variants:
+      - keywords: USE_ADDITIVE_BLENDING USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_ADDITIVE_BLENDING USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: -6465566751694194690, guid: 977daae2133b04d1daf43bfa00f4e2af,
+      type: 3}
+    second:
+      variants:
+      - keywords: ETC1_EXTERNAL_ALPHA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: e260cfa7296ee7642b167f1eb5be5023, type: 3}
+    second:
+      variants:
+      - keywords: ETC1_EXTERNAL_ALPHA USE_SHAPE_LIGHT_TYPE_0
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 13
+  - first: {fileID: 4800000, guid: e7857e9d0c934dc4f83f270f8447b006, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _BLOOM_LQ
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _BLOOM_LQ
+        passType: 0
+  - first: {fileID: 4800000, guid: 5f1864addb451f54bae8c86d230f736e, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+  - first: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+        passType: 0

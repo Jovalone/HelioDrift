@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1385459975099944034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385459975099944032}
+  - component: {fileID: 1385459975099944035}
+  - component: {fileID: 10802440366252393}
+  m_Layer: 0
+  m_Name: ShipGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385459975099944032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385459975099944034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6621813, y: 12.979304, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385459975099944035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385459975099944034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6e8b89188054655ab6589bec3fdd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  B1: {fileID: 8417437341576709312, guid: 81e1e3f8f992b43899a5bc6aee8a78e2, type: 3}
+  B2: {fileID: 2793354792641339768, guid: 817a0b5285c54442c9c6426565bbc33b, type: 3}
+  B3: {fileID: 1393986895198015640, guid: a7730a1946bb244adb20fd4942ad45a1, type: 3}
+  B4: {fileID: 7422265920907818401, guid: cf29ad48284ea4777bde33d621f045c0, type: 3}
+  Ship: {fileID: 0}
+  transform: {fileID: 1385459975099944032}
+--- !u!114 &10802440366252393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385459975099944034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4161d667abf148bcbd2339e0e54974a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  level: {fileID: 0}

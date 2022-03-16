@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - target
+  - Chunk
+  - EnemyBullet
+  - agent
+  - AllyShip
+  - EnemyShip
+  - Ship
+  - drop
+  - SquidSpawn
+  - SpaceStation
+  - Squid
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Icon
+  - Icon_mini
+  - CosmicBody
+  - Player
+  - PlayerShield
+  - Monster
+  - Monster_Attack
+  - Faction_1
+  - Shield_1
+  - Bullet_1
+  - Faction_2
+  - Shield_2
+  - Bullet_2
+  - wall
+  - PlayerBullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 1209507169
+    locked: 0
+  - name: MidGround
+    uniqueID: 1199460627
+    locked: 0
+  - name: ForGround
+    uniqueID: 1578909301
+    locked: 0
+  - name: Icon
+    uniqueID: 2717734305
+    locked: 0
