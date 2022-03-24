@@ -9,11 +9,11 @@ public class Player : MonoBehaviour
     //Player Movement
     public Transform transform;
     private Rigidbody2D rb;
-    public float speed, Speed, minSpeed, maxSpeed, medianSpeed;
-    public float rotationSpeed, maxRotation, minRotation;
+    public float speed, minSpeed, maxSpeed;
+    public float rotationSpeed, minRotation, maxRotation;
     public float k = 2;
     public float moveVelocity = 0f;
-    public float acceleration = 0.3f;
+    public float accelerationLinear, accelerationRotational;
     private float X, Y;
     public float RollDist, RollTotal, RollVelocity;
     public float DashDist, DashTotal, DashVelocity;
@@ -116,50 +116,17 @@ public class Player : MonoBehaviour
         Y = Input.GetAxisRaw("Vertical");
 
         //Update Velocity
-        moveVelocity += Y * acceleration;
-
-        if(Y > 0)
+        if (Y > 0)
         {
-            speed += acceleration * Time.fixedDeltaTime * 2;
-            if (speed > maxSpeed)
-            {
-                speed = maxSpeed;
-            }
-
-            rotationSpeed += acceleration * Time.fixedDeltaTime * 30;
-            if(rotationSpeed > maxRotation)
-            {
-                rotationSpeed = maxRotation;
-            }
+            AccelerateLinear();
+            AccelerateRotational();
         }
         else
         {
-            speed -= acceleration * Time.fixedDeltaTime * 4;
-            if (speed < medianSpeed)
-            {
-                speed = medianSpeed;
-            }
-
-            rotationSpeed -= acceleration * Time.fixedDeltaTime * 30;
-            if (rotationSpeed < minRotation)
-            {
-                rotationSpeed = minRotation;
-            }
+            DecelerateLinear();
+            DecelerateRotational();
         }
-
-        if (moveVelocity > speed)
-        {
-            moveVelocity = speed;
-        }
-        else if (moveVelocity < minSpeed && Y * acceleration < 0)
-        {
-            moveVelocity -= Y * acceleration;
-        }
-
-        if(moveVelocity < 0)
-        {
-            moveVelocity = 0;
-        }
+        this.moveVelocity = this.speed;
 
         //Calculate new position
         float roll = RollDist * Time.fixedDeltaTime * RollVelocity;
@@ -278,6 +245,58 @@ public class Player : MonoBehaviour
         else
         {
             boostSlider.value = 0;
+        }
+    }
+
+    /*
+    Increases the linear speed of the player.
+
+    The rate of increase in determined by the linear acceleration parameter.
+    */
+    public void AccelerateLinear() {
+        this.speed += this.accelerationLinear * Time.fixedDeltaTime;
+        if (this.speed > this.maxSpeed)
+        {
+            this.speed = this.maxSpeed;
+        }
+    }
+
+    /*
+    Increases the rotational speed of the player.
+
+    The rate of increase in determined by the rotational acceleration parameter.
+    */
+    public void AccelerateRotational() {
+        this.rotationSpeed += this.accelerationRotational * Time.fixedDeltaTime;
+        if(this.rotationSpeed > this.maxRotation)
+        {
+            this.rotationSpeed = this.maxRotation;
+        }
+    }
+
+    /*
+    Decreases the linear speed of the player.
+
+    The rate of decrease in determined by the linear acceleration parameter.
+    */
+    public void DecelerateLinear() {
+        this.speed -= this.accelerationLinear * Time.fixedDeltaTime;
+        if (this.speed < this.minSpeed)
+        {
+            this.speed = this.minSpeed;
+        }
+    }
+
+    /*
+    Decreases the rotational speed of the player.
+
+    The rate of decrease in determined by the rotational acceleration parameter.
+    */
+    public void DecelerateRotational() {
+        this.rotationSpeed -= this.accelerationRotational * Time.fixedDeltaTime;
+        if (this.rotationSpeed < this.minRotation)
+        {
+            this.rotationSpeed = this.minRotation;
         }
     }
 
