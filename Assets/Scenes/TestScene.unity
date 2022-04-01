@@ -5403,16 +5403,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 634360494}
   speed: 12
-  Speed: 5
-  minSpeed: 2
-  maxSpeed: 10
-  medianSpeed: 5
+  minSpeed: 5
+  maxSpeed: 12
   rotationSpeed: 500
-  maxRotation: 175
-  minRotation: 125
+  minRotation: 150
+  maxRotation: 200
   k: 0.1
   moveVelocity: 0
-  acceleration: 0.3
+  accelerationLinear: 2
+  accelerationRotational: 100
   RollDist: 0
   RollTotal: 200
   RollVelocity: 10

@@ -34,7 +34,7 @@ public class BarrelRoll : MonoBehaviour
 
     void Update()
     {
-        if (PlayerScript.Energy > 0 && PlayerScript.moveVelocity >= PlayerScript.medianSpeed && !coolingDown)
+        if (PlayerScript.Energy > 0 && PlayerScript.moveVelocity >= PlayerScript.minSpeed && !coolingDown)
         {
             if (Input.GetKey(KeyCode.Return))
             {

@@ -72,7 +72,7 @@ public class Stats : MonoBehaviour
             if (tutorial)
             {
                 //Regular Speed
-                playerScript.Speed = RegSpeed;
+                playerScript.speed = RegSpeed;
 
                 //Rotational Speed
                 playerScript.rotationSpeed = Rotation;
@@ -103,7 +103,7 @@ public class Stats : MonoBehaviour
             else
             {
                 //Regular Speed
-                playerScript.Speed = RegSpeed * enginePartValues[1] / 100;
+                playerScript.speed = RegSpeed * enginePartValues[1] / 100;
 
                 //Rotational Speed
                 playerScript.rotationSpeed = Rotation * enginePartValues[1] / 100;
