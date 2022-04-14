@@ -30,7 +30,7 @@ public class Shark : MonoBehaviour
 
     public int packStrength;
 
-    public shipVision vision;
+    //public shipVision vision;
     public List<Hittable> Danger;
     public List<Hittable> Targets;
     public List<Hittable> followersHittable;
@@ -278,7 +278,7 @@ public class Shark : MonoBehaviour
         }
 
         //Ideal Rotation
-        Vector2 Direction = ((Vector2)target - rb.position).normalized + (Vector2)avoidVector + (Vector2)vision.avoidDirection();
+        Vector2 Direction = ((Vector2)target - rb.position).normalized + (Vector2)avoidVector;// + (Vector2)vision.avoidDirection();
 
         //Calculate new position
         float newX = speed * Mathf.Cos(transform.eulerAngles.z * Mathf.PI / 180);

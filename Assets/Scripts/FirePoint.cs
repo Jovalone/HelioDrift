@@ -40,7 +40,7 @@ public class FirePoint : MonoBehaviour
     {
         if (Ammo[BulletType] != 0)
         {
-            if(Input.GetKey(KeyCode.Space) && loaded)
+            if(Input.GetMouseButtonDown(0) && loaded)
             {
                 Shoot();
                 Ammo[BulletType] -= 1;
@@ -63,8 +63,17 @@ public class FirePoint : MonoBehaviour
 
     void Shoot()
 	{
+        //testing mouse shooting
+        Vector3 shootDirection;
+        shootDirection = Input.mousePosition;
+        shootDirection.z = 0.0f;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection = shootDirection - transform.position;
+        Debug.Log(Mathf.Rad2Deg * Mathf.Atan2(shootDirection.y, shootDirection.x));
+
+
         player.moveVelocity = player.moveVelocity * shootStall[BulletType];
-        bullet = (GameObject)Instantiate(bulletPrefab[BulletType], firePoint.position, firePoint.rotation);
+        bullet = (GameObject)Instantiate(bulletPrefab[BulletType], firePoint.position, Quaternion.Euler(0, 0, -Mathf.Rad2Deg * Mathf.Atan2(shootDirection.x, shootDirection.y)));
         if(BulletType == 5)
         {
             bullet.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<LightningAttack>().Origin(Object);
@@ -76,7 +85,7 @@ public class FirePoint : MonoBehaviour
         {
             bullet.GetComponent<Bullet>().Origin(Object);
             bullet.GetComponent<Bullet>().SetTarget(Target);
-            bullet.GetComponent<Bullet>().speed += player.moveVelocity / 2;
+            //bullet.GetComponent<Bullet>().speed += player.moveVelocity / 2;
             Audio.Play();
             ScreenShakeController.instance.StartShake(0.03f, 0.3f);
             firingParticle.Play();

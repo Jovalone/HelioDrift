@@ -10,7 +10,6 @@ public class Turret : MonoBehaviour
     public GameObject turret;
 
     public GameObject coordinator;
-    public ShipCoordinator shipCoordinator;
     public List<GameObject> enemies;
     public List<GameObject> temp;
     public List<GameObject> TotalEnemies;
@@ -21,115 +20,121 @@ public class Turret : MonoBehaviour
 
     public bool Ally;
     public bool Battle;
-
-    void Start()
-    {
-        coordinator = GameObject.Find("ShipCoordinator");
-        shipCoordinator = coordinator.GetComponent<ShipCoordinator>();
-        if(shipCoordinator != null)
-        {
-            if (Ally)
-            {
-                shipCoordinator.allies.Add(gameObject);
-            }
-            else
-            {
-                shipCoordinator.enemies.Add(gameObject);
-            }
-        }
-    }
+    //Outdated needs to be changed to the new Ships script
 
     void Update()
     {
-        CheckForEnemy();
-        FindNewTarget();
-
-
-        if(target != null)
-        {
-            Battle = true;
-            move();
-        }
-        else
-        {
-            Battle = false;
-        }
-
-        if(hittable.Health <= 0)
-        {
-            Destroy(turret);
-        }
+        Debug.Log("Update Script");
     }
-
-    void move()
-    {
-        Vector3 Direction = (target.position - transform.position).normalized;
-
-        float angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
-
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationalSpeed * Time.fixedDeltaTime);
-    }
-
-    void CheckForEnemy()
-    {
-        if(shipCoordinator != null)
+        /*
+        void Start()
         {
-            if (Ally)
+            coordinator = GameObject.Find("ShipCoordinator");
+            shipCoordinator = coordinator.GetComponent<ShipCoordinator>();
+            if(shipCoordinator != null)
             {
-                TotalEnemies = shipCoordinator.enemies;
+                if (Ally)
+                {
+                    shipCoordinator.allies.Add(gameObject);
+                }
+                else
+                {
+                    shipCoordinator.enemies.Add(gameObject);
+                }
+            }
+        }
+
+        void Update()
+        {
+            CheckForEnemy();
+            FindNewTarget();
+
+
+            if(target != null)
+            {
+                Battle = true;
+                move();
             }
             else
             {
-                TotalEnemies = shipCoordinator.allies;
+                Battle = false;
+            }
+
+            if(hittable.Health <= 0)
+            {
+                Destroy(turret);
             }
         }
 
-        foreach (GameObject enemy in TotalEnemies)
+        void move()
         {
-            if (enemy != null)
+            Vector3 Direction = (target.position - transform.position).normalized;
+
+            float angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
+
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationalSpeed * Time.fixedDeltaTime);
+        }
+
+        void CheckForEnemy()
+        {
+            if(shipCoordinator != null)
             {
-                if (Vector3.Distance(enemy.transform.position, transform.position) < SenseDist)
+                if (Ally)
                 {
-                    if (!enemies.Contains(enemy))
+                    TotalEnemies = shipCoordinator.enemies;
+                }
+                else
+                {
+                    TotalEnemies = shipCoordinator.allies;
+                }
+            }
+
+            foreach (GameObject enemy in TotalEnemies)
+            {
+                if (enemy != null)
+                {
+                    if (Vector3.Distance(enemy.transform.position, transform.position) < SenseDist)
                     {
-                        enemies.Add(enemy);
+                        if (!enemies.Contains(enemy))
+                        {
+                            enemies.Add(enemy);
+                        }
                     }
                 }
             }
         }
-    }
 
-    void FindNewTarget()
-    {
-        //creates a large number then replaces it
-        float value = Mathf.Infinity;
-
-        temp = new List<GameObject>();
-
-        foreach (GameObject Enemy in enemies)
+        void FindNewTarget()
         {
-            if (Enemy == null || Vector3.Distance(Enemy.transform.position, transform.position) > SenseDist)
-            {
-                temp.Add(Enemy);
-            }
-            else
-            {
+            //creates a large number then replaces it
+            float value = Mathf.Infinity;
 
-                float distValue = Mathf.Pow(Vector3.Distance(transform.position, Enemy.transform.position), 2);
-                float angleValue = Mathf.Pow(Vector3.Angle(Enemy.transform.position - transform.position, transform.up) * Mathf.PI / 180, 0.5f);
-                if (value > distValue * angleValue)
+            temp = new List<GameObject>();
+
+            foreach (GameObject Enemy in enemies)
+            {
+                if (Enemy == null || Vector3.Distance(Enemy.transform.position, transform.position) > SenseDist)
                 {
-                    target = Enemy.transform;
-                    currentValue = distValue * angleValue;
+                    temp.Add(Enemy);
+                }
+                else
+                {
+
+                    float distValue = Mathf.Pow(Vector3.Distance(transform.position, Enemy.transform.position), 2);
+                    float angleValue = Mathf.Pow(Vector3.Angle(Enemy.transform.position - transform.position, transform.up) * Mathf.PI / 180, 0.5f);
+                    if (value > distValue * angleValue)
+                    {
+                        target = Enemy.transform;
+                        currentValue = distValue * angleValue;
+                    }
                 }
             }
-        }
 
-        foreach (GameObject Enemy in temp)
-        {
-            enemies.Remove(Enemy);
-        }
+            foreach (GameObject Enemy in temp)
+            {
+                enemies.Remove(Enemy);
+            }
+        }*/
     }
-}
