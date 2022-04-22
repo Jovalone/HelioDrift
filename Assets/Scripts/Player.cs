@@ -143,17 +143,25 @@ public class Player : MonoBehaviour
         //Drifting
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            //Drift
-            Debug.Log(rb.velocity);
-            rb.velocity *= 0.9975f;
-            rb.velocity += (Vector2)WindForce();
-            moveVelocity = rb.velocity.magnitude;
-
-            rb.velocity = Vector3.RotateTowards(rb.velocity, transform.up, Time.fixedDeltaTime * rotationSpeed * Mathf.PI / 360, 0);
-
-            if (moveVelocity > speed)
+            //Allow dashing during drift
+            if (DashDist != 0)
             {
-                moveVelocity = speed;
+                rb.velocity = new Vector3(newY, newX, 0) + (Vector3)WindForce();
+            }
+            //Drift
+            else 
+            {
+                Debug.Log(rb.velocity);
+                rb.velocity *= 0.9975f;
+                rb.velocity += (Vector2)WindForce();
+                moveVelocity = rb.velocity.magnitude;
+
+                rb.velocity = Vector3.RotateTowards(rb.velocity, transform.up, Time.fixedDeltaTime * rotationSpeed * Mathf.PI / 360, 0);
+
+                if (moveVelocity > speed)
+                {
+                    moveVelocity = speed;
+                }
             }
         }
         else
