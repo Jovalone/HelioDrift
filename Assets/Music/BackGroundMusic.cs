@@ -27,7 +27,7 @@ public class BackGroundMusic : MonoBehaviour
     {
         TrackSelector = Random.Range(0, audioClips.Length);
 
-        if (TrackSelector != TrackHistory)
+        if (TrackSelector != TrackHistory || audioClips.Length <= 1)
         {
             audioSource.clip = audioClips[TrackSelector];
             TrackHistory = TrackSelector;
